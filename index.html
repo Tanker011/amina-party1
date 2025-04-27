@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на 5 лет Амины</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff5f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #d23369;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(210, 51, 105, 0.2);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #ff6b9e;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+        
+        .details {
+            background-color: #fff0f5;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .program {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b9e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 107, 158, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #d23369;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background-color: #ff6b9e;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎀 Приглашение на праздник! 🎀</h1>
+        <img src="https://i.imgur.com/JQlY0aD.jpg" alt="День рождения" class="header-image">
+        
+        <p>Дорогие друзья!</p>
+        <p>Мы с радостью приглашаем вас на празднование <strong>5-летия нашей принцессы Амины</strong>!</p>
+        
+        <div class="details">
+            <p>📅 <strong>Дата:</strong> 15 сентября 2024 года</p>
+            <p>⏰ <strong>Время:</strong> 12:00</p>
+            <p>📍 <strong>Место:</strong> Детский клуб "Сказка", ул. Праздничная, 5</p>
+        </div>
+        
+        <div class="program">
+            <h3>🎉 В программе:</h3>
+            <ul>
+                <li>Встреча с любимыми героями</li>
+                <li>Весёлые игры и конкурсы</li>
+                <li>Мастер-класс по украшению кексов</li>
+                <li>Шоу мыльных пузырей</li>
+                <li>Торт и сладкий стол</li>
+                <li>Много танцев и смеха!</li>
+            </ul>
+        </div>
+        
+        <p>Ваше присутствие сделает этот день по-настоящему волшебным!</p>
+        
+        <a href="https://forms.gle/ВАША_ССЫЛКА_НА_ФОРМУ" class="cta-button">Подтвердить присутствие</a>
+        
+        <div class="footer">
+            <p>По всем вопросам: +7 (XXX) XXX-XX-XX (Мама Амины)</p>
+            <p>🎁 Подарки: Амина мечтает о наборах для творчества и книгах</p>
+        </div>
+    </div>
+
+    <script>
+        // Создаем воздушные шарики
+        function createBalloons() {
+            const colors = ['#ff6b9e', '#ffb8d9', '#ffd6e7', '#d23369'];
+            const container = document.body;
+            
+            for (let i = 0; i < 15; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.top = Math.random() * 100 + 'vh';
+                balloon.style.transform = 'scale(' + (Math.random() * 0.5 + 0.5) + ')';
+                container.appendChild(balloon);
+                
+                animateBalloon(balloon);
+            }
+        }
+        
+        function animateBalloon(balloon) {
+            let pos = -50;
+            const speed = Math.random() * 2 + 1;
+            
+            function frame() {
+                pos += speed;
+                balloon.style.top = pos + 'px';
+                
+                if (pos > window.innerHeight) {
+                    balloon.style.top = '-50px';
+                    pos = -50;
+                }
+                requestAnimationFrame(frame);
+            }
+            
+            frame();
+        }
+        
+        window.onload = createBalloons;
+    </script>
+</body>
+</html>
